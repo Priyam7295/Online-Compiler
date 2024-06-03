@@ -1,6 +1,7 @@
 const express =require('express');
 const app =express();
 const generateFile = require('./generateFile');
+const generateInputFile = require('./generateInputFile');
 const executeCpp = require('./executeCpp');
 const executePy = require('./executePy');
 
@@ -23,17 +24,17 @@ app.post('/run', async (req, res) => {
         return res.status(400).json({ success: false, error: "Language or code is missing in the request body." });
     }
 
-    const { language, code } = req.body;
+    const { language, code , input } = req.body;
 
     try {
         // Store the user given code into a file
-        const filePath = generateFile(language, code);
-
+        const filePath = await generateFile(language, code);
+        const inputPath = await generateInputFile(input);
         let output;
         if (language === 'cpp') {
-            output = await executeCpp(filePath);
+            output = await executeCpp(filePath , inputPath);
         } else if (language === 'py') {
-            output = await executePy(filePath);
+            output = await executePy(filePath , inputPath);
         } else {
             return res.status(400).json({ success: false, error: "Unsupported language" });
         }

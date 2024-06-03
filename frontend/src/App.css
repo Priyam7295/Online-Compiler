@@ -6,6 +6,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  font-size: 18px; /* Increased font size */
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
 }
 
 .title {
-  font-size: 3em;
+  font-size: 2.5em; /* Increased font size */
   font-weight: bold;
   margin-bottom: 20px;
   color: transparent;
@@ -31,14 +32,26 @@ body {
   background-clip: text;
 }
 
+.content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.editor-section, .output-section {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
 .select-box {
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 8px;
+  padding: 10px; /* Increased padding */
   margin-bottom: 20px;
   width: 100%;
-  max-width: 200px;
   transition: border-color 0.3s;
+  font-size: 18px; /* Increased font size */
 }
 
 .select-box:focus {
@@ -50,13 +63,17 @@ body {
   flex-direction: column;
   background-color: #f7fafc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 350px; /* Adjusted height */
-  padding: 20px;
+  width: 100%; /* Adjusted width */
+  /* height: 300px; Adjusted height */
+  /* padding: 20px; */
   border-radius: 8px;
-  margin-bottom: 20px;
+  /* margin-bottom: 7px; */
 }
 
+.editor{
+  width: 100%;
+  height: 100%;
+}
 
 .run-button {
   display: inline-flex;
@@ -67,11 +84,12 @@ body {
   font-weight: 500;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Increased padding */
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
   margin-top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Increased font size */
 }
 
 .run-button:hover {
@@ -79,30 +97,30 @@ body {
 }
 
 .run-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 24px; /* Increased icon size */
+  height: 24px; /* Increased icon size */
+  margin-right: 10px; /* Increased margin */
 }
 
 .output-box {
   background-color: #f7fafc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Set maximum width */
-  max-height: 500px; /* Set maximum height */
+  width: 100%; /* Set maximum width */
+  height: 400px; /* Set maximum height */
   border-radius: 8px;
-  padding: 10px;
+  padding: 20px; /* Increased padding */
   overflow: auto; /* Add scrollbars when needed */
   word-wrap: break-word; /* Prevent long words from overflowing */
   white-space: pre-wrap; /* Preserve spaces and line breaks */
+  font-size: 18px; /* Increased font size */
 }
 
 .output-text {
   font-family: 'Fira code', 'Fira Mono', monospace;
-  font-size: 14px;
+  font-size: 16px; /* Increased font size */
   white-space: pre-wrap;
   color: #2c3e50;
 }
-
 
 .select-box {
   border: 2px solid #3498db;
@@ -110,10 +128,9 @@ body {
   padding: 10px;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 200px;
   background-color: #f0f4f8;
   color: #333;
-  font-size: 16px;
+  font-size: 18px; /* Increased font size */
   font-weight: bold;
   outline: none;
   cursor: pointer;
@@ -132,10 +149,65 @@ body {
   background-color: #f0f4f8;
   color: #333;
   padding: 8px;
-  font-size: 16px;
+  font-size: 18px; /* Increased font size */
   font-weight: bold;
 }
 
 .select-box option:hover {
   background-color: #ffffff;
+}
+
+
+.input_block h2 {
+  margin-top:10px;
+  /* text-align: center; */
+  /* height: 100px;
+  letter-spacing: 1px; */
+}
+.input_block h2 {
+  margin-top:10px;
+  padding-left:10px;
+  /* text-align: center; */
+  background-color: rgb(242, 238, 238);
+  margin-bottom: 2px;
+  border-radius: 20px;
+  font-size:22px;
+  letter-spacing: 3px;
+  font-weight: 600;
+
+}
+.input_block textarea {
+  border:1px solid black;
+  width: 100%;
+  height:60px;
+  max-height: 60px;
+}
+
+.output-section{
+  /* background-color: #f0f4f8; */
+  display: flex;
+  
+}
+.output-section h2{
+  font-size:25px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  border: 2px solid #3498db;
+  border-radius: 5px ;
+}
+
+.error-text {
+  font-family: 'Fira Code', 'Fira Mono', monospace; /* Choose your preferred monospaced font */
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #c0392b; /* Choose a color for the error text */
+}
+
+
+.error-box{
+  width:100%;
+  margin-top:20px;
+  overflow: auto;
+  color: red;
+  
 }
