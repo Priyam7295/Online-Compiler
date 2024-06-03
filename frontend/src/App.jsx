@@ -8,18 +8,21 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [code, setCode] = useState(`
+  const cppCode=`
   // Include the input/output stream library
   #include <iostream> 
   using namespace std;
   // Define the main function
   int main() { 
-      // Output "Hello World!" to the console
-      cout << "Hello World!"; 
+      // Output "Welcome!" to the console
+      cout << "Welcome to Crack the Code online Compiler!"; 
       
       // Return 0 to indicate successful execution
       return 0; 
-  }`);
+  }`;
+
+  const pyCode =`print("Welcome to Crack the Code online Compiler!")`;
+  const [code, setCode] = useState(cppCode);
   const [output, setOutput] = useState("");
 
   const [input, setInput] = useState("");
@@ -54,7 +57,12 @@ function App() {
   const handleLanguageChange = (event) => {
     setSelectedLanguage(event.target.value);
     if (event.target.value === "py") {
-      setCode("");
+      setCode(pyCode);
+      
+    }
+    if (event.target.value === "cpp") {
+      setCode(cppCode);
+      
     }
   };
 
